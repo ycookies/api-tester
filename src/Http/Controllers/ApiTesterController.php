@@ -83,9 +83,9 @@ class ApiTesterController extends AdminController {
 
         // 返回视图
         return $content
-            ->title('接口测试')
-            ->breadcrumb(['text' => '接口测试', 'url' => ''])
-            ->description('接口测试文档');
+            ->title('接口文档')
+            ->breadcrumb(['text' => '接口文档', 'url' => ''])
+            ->description('可管理接口并做测试');
     }
 
     /**

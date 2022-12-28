@@ -51,11 +51,11 @@ class ApiTesterController extends AdminController {
                 $form->action(admin_url('ycookies/api-tester/handle')); // $menuModel::selectOptions()
                 $form->row(function (Form\Row $form) {
                     $form->width(3)->select('parent_id', '分组')->options(ApiTester::getParentInfo());
-                    $form->width(8)->text('title', '接口名称')->value('用户注册')->required();
+                    $form->width(8)->text('title', '接口名称')->required();
                 });
                 $form->row(function (Form\Row $form) {
                     $form->width(3)->select('method', '请求方式')->options(ApiTester::$methods)->required();
-                    $form->width(8)->url('uri', '接口地址')->value('http://dcat.test/api/test')->required('uri');
+                    $form->width(8)->url('uri', '接口地址')->required('uri');
                 });
                 $form->row(function (Form\Row $form) {
                     $form->textarea('descs', '接口描述')->value('暂无');

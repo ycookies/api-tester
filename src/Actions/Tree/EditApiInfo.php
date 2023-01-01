@@ -28,13 +28,18 @@ class EditApiInfo extends RowAction
     public function handle(Request $request)
     {
     	//
+        //$proj_id = $request->get('proj_id');
     	$key = $this->getKey();
+
+        //$proj_id = $request->get('proj_id');
+        $infos = ApiTester::find($key);
+        $proj_id = $infos->proj_id;
     	/*info('key:'.$key);
     	$infos = ApiTester::find($key)->toArray();
     	info($infos);
         $form = new WidgetsForm($infos);
         $form->setFormId('api-tester-add-form');*/
-        return $this->response()->redirect('ycookies/api-tester?id='.$key);
+        return $this->response()->redirect('ycookies/api-tester?proj_id='.$proj_id.'&id='.$key);
     }
 
     /**
